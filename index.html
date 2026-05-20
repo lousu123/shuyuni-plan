@@ -5,65 +5,230 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>蜀与你砂锅土豆粉 · 全网运营营销方案</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f5f2ed;font-family:system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;color:#2c2420;line-height:1.8}
-.container{max-width:960px;margin:0 auto;padding:24px 16px 80px}
-.section-header{text-align:center;margin-bottom:32px;padding:32px 20px;background:linear-gradient(135deg,#3d1c0c,#6b2d12);border-radius:16px;color:#f0ebe4}
-.section-header h1{font-size:1.8rem;margin-bottom:8px}
-.section-header h1 small{font-size:1rem;opacity:.8;display:block;margin-top:4px}
-.section-header .tagline{margin-top:12px;font-size:.95rem;opacity:.9}
-.tags{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin:12px 0}
-.badge{padding:3px 10px;border-radius:12px;font-size:.75rem;background:#4a3728;color:#f0ebe4}
-.badge.gold{background:#c4956a;color:#2c2420}
-.badge.green{background:#4a7c59;color:#fff}
-.badge.red{background:#a33;color:#fff}
-.badge.orange{background:#d4872a;color:#fff}
-.section-card{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.section-card h2{font-size:1.25rem;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid #e8e0d8}
-.section-card h2 .num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:#3d1c0c;color:#fff;border-radius:50%;font-size:.85rem;margin-right:8px}
-.section-card h3{font-size:1.05rem;margin:16px 0 8px;color:#3d1c0c}
-.section-card h3:first-of-type{margin-top:0}
-.section-card p{font-size:.92rem;margin-bottom:10px;color:#444}
-ul,ol{padding-left:20px;margin-bottom:12px}
-li{font-size:.92rem;margin-bottom:4px;color:#444}
-table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:.85rem}
-th{background:#3d1c0c;color:#f0ebe4;padding:8px 10px;text-align:left;font-weight:600}
-td{padding:8px 10px;border-bottom:1px solid #e8e0d8}
-tr:nth-child(even) td{background:#faf8f5}
-.price{color:#a33;font-weight:700;white-space:nowrap}
-.highlight{background:#fcf8f3;border-left:4px solid #c4956a;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:.9rem}
-.highlight p{margin-bottom:0}
-.hl{color:#c4956a}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.info-item{background:#faf8f5;padding:10px 12px;border-radius:8px;font-size:.85rem}
-.info-item .label{color:#888;font-size:.75rem}
-.info-item .value{font-weight:600;margin-top:2px}
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
-.kpi-item{text-align:center;padding:14px 8px;background:#faf8f5;border-radius:10px}
-.kpi-item .num{font-size:1.3rem;font-weight:700;color:#3d1c0c}
-.kpi-item .label{font-size:.75rem;color:#888;margin-top:2px}
-@media(max-width:640px){.container{padding:16px 12px 60px}.section-header h1{font-size:1.4rem}.info-grid{grid-template-columns:1fr 1fr}.kpi-grid{grid-template-columns:1fr 1fr}}
+html{scroll-behavior:smooth}
+body{
+  background:#1a120e;color:#f0ebe4;
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  line-height:1.8;overflow-x:hidden;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, #3d1c0c22 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #6b2d1222 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #c4956a11 0%, transparent 50%);
+  min-height:100vh;
+}
+
+/* ===== 土豆小精灵 ===== */
+.potato-float{
+  position:fixed;pointer-events:none;z-index:0;
+  font-size:2rem;opacity:.25;animation:potatoDrift linear infinite;
+}
+.potato-float:nth-child(1){left:5%;top:15%;animation-duration:18s;font-size:2.8rem;opacity:.15}
+.potato-float:nth-child(2){right:8%;top:35%;animation-duration:22s;font-size:2rem;opacity:.12;animation-delay:-5s}
+.potato-float:nth-child(3){left:12%;top:55%;animation-duration:20s;font-size:2.4rem;opacity:.1;animation-delay:-10s}
+.potato-float:nth-child(4){right:5%;top:70%;animation-duration:25s;font-size:1.6rem;opacity:.08;animation-delay:-15s}
+.potato-float:nth-child(5){left:50%;top:10%;animation-duration:16s;font-size:1.8rem;opacity:.18;animation-delay:-3s}
+@keyframes potatoDrift{
+  0%{transform:translateY(0) rotate(0deg) scale(1)}
+  25%{transform:translateY(-30px) rotate(10deg) scale(1.1)}
+  50%{transform:translateY(0) rotate(0deg) scale(1)}
+  75%{transform:translateY(20px) rotate(-10deg) scale(.95)}
+  100%{transform:translateY(0) rotate(0deg) scale(1)}
+}
+
+/* ===== 滚动动画 ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+/* ===== 容器 ===== */
+.container{max-width:960px;margin:0 auto;padding:20px 16px 80px;position:relative;z-index:1}
+
+/* ===== 顶部英雄区 ===== */
+.hero{
+  text-align:center;padding:48px 24px 36px;margin-bottom:28px;
+  background:linear-gradient(145deg,#2a1610,#3d1c0c,#5a2510);
+  border-radius:20px;position:relative;overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 40%, #c4956a15 0%, transparent 50%),
+             radial-gradient(circle at 70% 60%, #e8a87c10 0%, transparent 50%);
+}
+.hero .potato-mascot{
+  font-size:4.5rem;display:block;margin-bottom:8px;
+  animation:bounce 2s ease-in-out infinite;
+  filter:drop-shadow(0 4px 12px rgba(196,149,106,.3));
+  position:relative;z-index:1;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+.hero h1{font-size:2rem;font-weight:900;margin-bottom:4px;position:relative;z-index:1}
+.hero h1 small{font-size:1rem;opacity:.8;font-weight:400;display:block;margin-top:4px}
+.hero .tagline{margin-top:10px;font-size:.9rem;opacity:.85;position:relative;z-index:1}
+.hero .tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:14px 0 0;position:relative;z-index:1}
+.tag{
+  padding:4px 14px;border-radius:20px;font-size:.7rem;font-weight:700;
+  border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(4px);
+}
+.tag.gold{background:rgba(196,149,106,.25);border-color:#c4956a66;color:#e8c49a}
+.tag.green{background:rgba(74,124,89,.25);border-color:#4a7c5966;color:#8bc49a}
+.tag.red{background:rgba(170,51,51,.25);border-color:#a336;color:#e08a8a}
+.tag.orange{background:rgba(212,135,42,.25);border-color:#d4872a66;color:#e8b87c}
+.tag.beige{background:rgba(200,180,160,.15);border-color:#c8b4a066;color:#d8c8b8}
+
+/* ===== 卡片 ===== */
+.card{
+  background:linear-gradient(160deg,#1e1612,#2a1e18);
+  border-radius:16px;padding:28px;margin-bottom:22px;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 4px 24px rgba(0,0,0,.3);
+  position:relative;overflow:hidden;
+}
+.card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#c4956a44,transparent);
+}
+.card h2{
+  font-size:1.2rem;margin-bottom:18px;padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;gap:10px;
+}
+.card h2 .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,#c4956a,#e8a87c);
+  color:#1a120e;font-size:.85rem;font-weight:900;flex-shrink:0;
+}
+.card h3{
+  font-size:1rem;margin:18px 0 10px;color:#e8c49a;
+  display:flex;align-items:center;gap:8px;
+}
+.card h3:first-of-type{margin-top:0}
+.card p{font-size:.88rem;margin-bottom:10px;color:#c8b8a8}
+.card ul,.card ol{padding-left:20px;margin-bottom:10px}
+.card li{font-size:.85rem;margin-bottom:5px;color:#c8b8a8;line-height:1.6}
+
+/* ===== 表格 ===== */
+.table-wrap{overflow-x:auto;margin:12px 0 16px;border-radius:10px;border:1px solid rgba(255,255,255,.06)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:500px}
+th{background:rgba(196,149,106,.15);color:#e8c49a;padding:10px 12px;text-align:left;font-weight:700;white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.04);color:#c8b8a8}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(196,149,106,.04)}
+.price{color:#f0a070;font-weight:700;white-space:nowrap}
+
+/* ===== 高亮块 ===== */
+.highlight{
+  background:linear-gradient(135deg,rgba(196,149,106,.08),rgba(232,168,124,.04));
+  border-left:3px solid #c4956a;
+  padding:16px 20px;margin:14px 0;border-radius:0 10px 10px 0;
+  font-size:.85rem;color:#d8c8b8;
+}
+.highlight strong{color:#e8c49a}
+
+/* ===== 信息网格 ===== */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:12px 0}
+.info-item{
+  background:rgba(255,255,255,.03);padding:12px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.04);
+  transition:all .3s;
+}
+.info-item:hover{background:rgba(196,149,106,.08);border-color:#c4956a33;transform:translateY(-2px)}
+.info-item .label{color:#a09080;font-size:.72rem;margin-bottom:2px}
+.info-item .value{font-weight:700;font-size:.9rem;color:#f0e4d8}
+
+/* ===== KPI ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}
+.kpi-item{
+  text-align:center;padding:16px 8px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+  border-radius:12px;border:1px solid rgba(255,255,255,.06);
+  transition:all .4s;cursor:default;
+}
+.kpi-item:hover{background:linear-gradient(180deg,rgba(196,149,106,.12),rgba(196,149,106,.04));transform:translateY(-4px);border-color:#c4956a44}
+.kpi-item .num{font-size:1.3rem;font-weight:900;color:#e8c49a;display:block}
+.kpi-item .label{font-size:.72rem;color:#a09080;margin-top:4px;display:block}
+
+/* ===== 底部总结 ===== */
+.summary-card{
+  text-align:center;
+  background:linear-gradient(145deg,#2a1610,#3d1c0c);
+  border-radius:16px;padding:36px 24px;
+  border:1px solid rgba(196,149,106,.15);
+  position:relative;overflow:hidden;
+}
+.summary-card::before{
+  content:'🥔';position:absolute;font-size:8rem;opacity:.06;
+  right:-20px;bottom:-20px;transform:rotate(-15deg);
+}
+.summary-card h2{color:#e8c49a;margin-bottom:16px;font-size:1.1rem}
+.summary-card p{font-size:1.1rem;color:#f0e4d8;line-height:1.9;max-width:600px;margin:0 auto}
+.summary-card .meta{color:#a09080;font-size:.78rem;margin-top:20px}
+
+/* ===== 响应式 ===== */
+@media(max-width:640px){
+  .container{padding:12px 10px 60px}
+  .hero{padding:32px 16px 28px}
+  .hero h1{font-size:1.5rem}
+  .hero .potato-mascot{font-size:3.5rem}
+  .card{padding:20px 16px;border-radius:12px}
+  .card h2{font-size:1.05rem}
+  .info-grid{grid-template-columns:1fr 1fr;gap:6px}
+  .kpi-grid{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .potato-float{display:none}
+  .summary-card{padding:24px 16px}
+}
+
+/* ===== 小土豆装饰动画 ===== */
+.potato-deco{
+  position:absolute;pointer-events:none;opacity:.08;
+  animation:potatoSpin 20s linear infinite;
+}
+@keyframes potatoSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* ===== 加载动画 ===== */
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 </style>
 </head>
 <body>
+
+<!-- 浮动小土豆装饰 -->
+<div class="potato-float">🥔</div>
+<div class="potato-float">🥔</div>
+<div class="potato-float">🥔</div>
+<div class="potato-float">🥔</div>
+<div class="potato-float">🥔</div>
+
 <div class="container">
 
-<div class="section-header">
-  <h1>🍜 蜀与你砂锅土豆粉<br><small>塘沽工农村·凯旺广场 · 全网运营营销方案</small></h1>
+<!-- 顶部英雄区 -->
+<div class="hero reveal visible">
+  <div class="potato-mascot">🥔</div>
+  <h1>蜀与你砂锅土豆粉<br><small>塘沽工农村·凯旺广场 · 全网运营营销方案</small></h1>
   <div class="tagline">
-    <span class="hl">「对标甜甜姑娘连锁模型 × 独立品牌 × 小吃快餐」</span> — 蜀地风味+砂锅烟火气，做工农村最香的土豆粉
+    <span style="color:#e8c49a">「对标甜甜姑娘连锁模型 × 独立品牌 × 小吃快餐」</span> — 蜀地风味+砂锅烟火气，做工农村最香的土豆粉
   </div>
   <div class="tags">
-    <span class="badge">砂锅土豆粉</span>
-    <span class="badge gold">土豆泥</span>
-    <span class="badge green">盖浇饭</span>
-    <span class="badge red">土豆泥盖浇面</span>
-    <span class="badge orange">新店开业</span>
+    <span class="tag beige">🍜 砂锅土豆粉</span>
+    <span class="tag gold">🥔 土豆泥</span>
+    <span class="tag green">🍚 盖浇饭</span>
+    <span class="tag red">🍝 土豆泥盖浇面</span>
+    <span class="tag orange">🔥 新店开业</span>
   </div>
 </div>
 
-<!-- 项目全景 -->
-<div class="section-card">
+<!-- 1. 项目全景 -->
+<div class="card reveal">
   <h2><span class="num">1</span> 项目全景</h2>
   <div class="info-grid">
     <div class="info-item"><div class="label">🏪 店名</div><div class="value">蜀与你砂锅土豆粉</div></div>
@@ -71,241 +236,268 @@ tr:nth-child(even) td{background:#faf8f5}
     <div class="info-item"><div class="label">🍜 品类</div><div class="value">小吃快餐</div></div>
     <div class="info-item"><div class="label">📍 位置</div><div class="value">塘沽工农村·凯旺广场1号楼</div></div>
     <div class="info-item"><div class="label">📐 面积</div><div class="value">约50㎡</div></div>
-    <div class="info-item"><div class="label">👥 客群</div><div class="value">工农村居民+周边上班族+工厂工人</div></div>
+    <div class="info-item"><div class="label">👥 客群</div><div class="value">工农村居民+上班族+工厂</div></div>
     <div class="info-item"><div class="label">💰 人均</div><div class="value">¥15-20</div></div>
-    <div class="info-item"><div class="label">📐 面积</div><div class="value">约50㎡</div></div>
     <div class="info-item"><div class="label">🕐 高峰</div><div class="value">午间11:30-13:00 / 晚间17:30-19:30</div></div>
-    <div class="info-item"><div class="label">🏢 对标</div><div class="value">甜甜姑娘连锁模型（100+门店）</div></div>
+    <div class="info-item"><div class="label">🏢 对标</div><div class="value">甜甜姑娘连锁（100+店）</div></div>
   </div>
 
   <div class="highlight">
-    <strong>💡 核心洞察：</strong>塘沽工农村片区是滨海新区的老牌生活区+工业区，周边有大量居民小区和工厂企业。凯旺广场是工农村的商业集中地，周边有凯旺超市、农贸市场等生活配套。客群以工薪阶层和工厂工人为主，消费特点是"实惠、管饱、出餐快"。约50㎡的小店做砂锅土豆粉，出餐快、翻台高、坪效好——人均¥15-20的砂锅土豆粉完美契合需求：砂锅端上来热乎乎的烟火气+蜀地风味+土豆泥拌粉拌面的独特口感，比普通快餐更有记忆点，比正餐更轻更快。
+    <strong>💡 核心洞察：</strong>塘沽工农村是滨海新区的老牌生活区+工业区，周边有大量居民小区和工厂企业。约50㎡小店做砂锅土豆粉，出餐快、翻台高、坪效好——人均¥15-20完美契合工薪客群：砂锅端上来热乎乎的烟火气+蜀地风味+土豆泥拌粉拌面的独特口感，比普通快餐更有记忆点，比正餐更轻更快。
   </div>
 </div>
 
-<!-- 门店诊断 -->
-<div class="section-card">
-  <h2><span class="num">2</span> 门店诊断与机会点（参照甜甜姑娘模型）</h2>
+<!-- 2. 门店诊断 -->
+<div class="card reveal reveal-delay-1">
+  <h2><span class="num">2</span> 门店诊断与机会点</h2>
+  <div class="table-wrap">
   <table>
-    <tr><th style="width:120px">维度</th><th>分析</th></tr>
-    <tr><td><strong>✅ 优势</strong></td><td>独立品牌无加盟费，成本更可控；蜀地风味有差异化；砂锅土豆粉自带烟火气+抖音传播属性；品类覆盖土豆粉/土豆泥/盖浇饭/盖浇面，适配午晚餐全时段</td></tr>
-    <tr><td><strong>⚠️ 劣势</strong></td><td>新店无口碑、无星级、无销量基础；凯旺广场非顶级商圈，自然流量有限；工农村区域消费力偏低需控价；独立品牌无供应链支撑</td></tr>
-    <tr><td><strong>🚀 机会</strong></td><td>工农村周边竞品以普通快餐/麻辣烫为主，土豆粉+土豆泥品类有稀缺性；可深耕周边工厂外卖（企业团餐）；甜甜姑娘已验证模式可行，直接复用其运营逻辑</td></tr>
-    <tr><td><strong>🛡 威胁</strong></td><td>工农村附近已有麻辣烫/米线等同类竞品；价格战风险；外卖平台抽佣压缩利润</td></tr>
+    <tr><th style="width:90px">维度</th><th>分析</th></tr>
+    <tr><td style="color:#7bc49a"><strong>✅ 优势</strong></td><td>独立品牌无加盟费成本可控；蜀地风味有差异化；砂锅土豆粉自带烟火气+抖音传播属性；品类覆盖广适配全时段</td></tr>
+    <tr><td style="color:#e8b87c"><strong>⚠️ 劣势</strong></td><td>新店无口碑无星级无销量基础；凯旺广场非顶级商圈流量有限；独立品牌无供应链支撑</td></tr>
+    <tr><td style="color:#8bc4d8"><strong>🚀 机会</strong></td><td>工农村周边竞品以普通快餐/麻辣烫为主，土豆粉+土豆泥有稀缺性；可深耕工厂外卖团餐；甜甜姑娘已验证模式可行</td></tr>
+    <tr><td style="color:#e08a8a"><strong>🛡 威胁</strong></td><td>周边已有麻辣烫米线等竞品；价格战风险；外卖平台抽佣压缩利润</td></tr>
   </table>
+  </div>
 
   <div class="highlight">
     <strong>🎯 核心策略：</strong><br>
-    <strong>「对标甜甜姑娘，扎根工农村——以砂锅土豆粉立品类，以土豆泥拌粉拉复购，以外卖+堂食双线冲量」</strong>
+    <strong style="font-size:.95rem">「对标甜甜姑娘，扎根工农村——以砂锅土豆粉立品类，以土豆泥拌粉拉复购，以外卖+堂食双线冲量」</strong>
   </div>
 </div>
 
-<!-- 产品结构 -->
-<div class="section-card">
-  <h2><span class="num">3</span> 产品结构与定价策略（对标甜甜姑娘）</h2>
+<!-- 3. 产品结构 -->
+<div class="card reveal reveal-delay-2">
+  <h2><span class="num">3</span> 产品结构与定价策略</h2>
 
   <h3>🍜 核心产品矩阵</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>品类</th><th>产品</th><th>定价</th><th>定位</th></tr>
-    <tr><td><strong>🌶 引流爆款</strong></td><td>蜀与你经典砂锅土豆粉（原味/微辣/麻辣）</td><td class="price">¥12.9</td><td>新客尝鲜·冲销量·低于同品类20%</td></tr>
-    <tr><td><strong>🥔 招牌特色</strong></td><td>蜀与你土豆泥砂锅粉（甜甜姑娘同款升级）</td><td class="price">¥15.9-17.9</td><td>招牌必点·毛利主力</td></tr>
-    <tr><td><strong>🍚 管饱系列</strong></td><td>盖浇饭系列（鱼香肉丝/宫保鸡丁/红烧肉）</td><td class="price">¥16.9-18.9</td><td>覆盖中午"要吃饱"的客群</td></tr>
-    <tr><td><strong>🍝 创意面系列</strong></td><td>土豆泥盖浇面/砂锅刀削面（两掺）</td><td class="price">¥14.9-16.9</td><td>差异化产品·甜甜姑娘爆款复刻</td></tr>
+    <tr><td><strong>🌶 引流爆款</strong></td><td>经典砂锅土豆粉（原味/微辣/麻辣）</td><td class="price">¥12.9</td><td>新客尝鲜·冲销量</td></tr>
+    <tr><td><strong style="color:#e8c49a">🥔 招牌特色</strong></td><td>土豆泥砂锅粉（甜甜姑娘同款升级）</td><td class="price">¥15.9-17.9</td><td>招牌必点·毛利主力</td></tr>
+    <tr><td><strong>🍚 管饱系列</strong></td><td>盖浇饭（鱼香肉丝/宫保鸡丁等）</td><td class="price">¥16.9-18.9</td><td>覆盖中午管饱客群</td></tr>
+    <tr><td><strong>🍝 创意面系列</strong></td><td>土豆泥盖浇面/砂锅刀削面（两掺）</td><td class="price">¥14.9-16.9</td><td>差异化·甜甜姑娘爆款复刻</td></tr>
     <tr><td><strong>🧃 小吃饮品</strong></td><td>小酥肉/红糖冰粉/酸梅汤/凉糕</td><td class="price">¥4-8</td><td>拉客单·解腻搭配</td></tr>
   </table>
+  </div>
 
   <div class="highlight">
-    <strong>💡 甜甜姑娘定价逻辑参考：</strong>人均¥15-20=1份砂锅粉/面+1份小吃/饮品。引流款¥12.9做价格锚点，主力款¥15.9-17.9走量，土豆泥系列作为招牌溢价产品。外卖价格比堂食高¥2-3覆盖平台扣点。
+    <strong>💡 甜甜姑娘定价逻辑：</strong>人均¥15-20=1份砂锅粉/面+1份小吃。引流款¥12.9做价格锚点，主力款¥15.9-17.9走量，外卖比堂食高¥2-3覆盖平台扣点。
   </div>
 
   <h3>📋 套餐设计（团购+外卖）</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>平台</th><th>套餐名称</th><th>内容</th><th>原价</th><th>售价</th></tr>
-    <tr><td><strong>美团/抖音</strong></td><td>新客尝鲜·单人砂锅粉</td><td>经典砂锅土豆粉×1</td><td>¥14.9</td><td class="price">¥9.9</td></tr>
-    <tr><td><strong>美团/抖音</strong></td><td>招牌双人嗦粉套餐</td><td>土豆泥砂锅粉×2 + 小酥肉×1 + 酸梅汤×2</td><td>¥42</td><td class="price">¥26.9</td></tr>
-    <tr><td><strong>美团/抖音</strong></td><td>超值单人饱饱餐</td><td>盖浇饭/土豆泥盖浇面任选×1 + 冰粉×1</td><td>¥21.9</td><td class="price">¥14.9</td></tr>
-    <tr><td><strong>美团外卖</strong></td><td>打工人午餐套餐</td><td>砂锅粉+小吃+饮品（工作日11-13点专享）</td><td>¥24.9</td><td class="price">¥16.9</td></tr>
-    <tr><td><strong>美团外卖</strong></td><td>3人团餐·工厂特惠</td><td>砂锅粉×3 + 盖浇饭×1 + 小食×2（满3份起送）</td><td>¥79</td><td class="price">¥49</td></tr>
+    <tr><td>美团/抖音</td><td>🥇 新客尝鲜·单人砂锅粉</td><td>经典砂锅土豆粉×1</td><td>¥14.9</td><td class="price">¥9.9</td></tr>
+    <tr><td>美团/抖音</td><td>🥈 招牌双人嗦粉套餐</td><td>土豆泥砂锅粉×2 + 小酥肉×1 + 酸梅汤×2</td><td>¥42</td><td class="price">¥26.9</td></tr>
+    <tr><td>美团/抖音</td><td>🥉 超值单人饱饱餐</td><td>盖浇饭/土豆泥盖浇面任选 + 冰粉</td><td>¥21.9</td><td class="price">¥14.9</td></tr>
+    <tr><td>外卖</td><td>💼 打工人午餐套餐</td><td>砂锅粉+小吃+饮品（工作日11-13点）</td><td>¥24.9</td><td class="price">¥16.9</td></tr>
+    <tr><td>外卖</td><td>🏭 3人团餐·工厂特惠</td><td>砂锅粉×3 + 盖浇饭×1 + 小食×2（满3份起送）</td><td>¥79</td><td class="price">¥49</td></tr>
   </table>
+  </div>
 </div>
 
-<!-- 线上平台运营 -->
-<div class="section-card">
+<!-- 4. 线上运营 -->
+<div class="card reveal">
   <h2><span class="num">4</span> 线上平台运营全攻略</h2>
 
   <h3>🔥 美团点评运营</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>阶段</th><th>动作</th><th>目标</th></tr>
-    <tr><td><strong>上线期（D1-D7）</strong></td><td>完善门店信息：品类标签/门店头图（砂锅冒热气实拍）/菜单上传/路径指引；上线¥9.9引流团购；引导到店顾客写好评（送饮品）</td><td>快速积累10-20条评价</td></tr>
-    <tr><td><strong>冲量期（D8-D30）</strong></td><td>美团团购冲销量（目标200+单）；参与美团"新店特惠"流量扶持；扫码点餐引导好评（收藏打卡送卤蛋/豆干）</td><td>冲上工农村小吃快餐TOP10</td></tr>
-    <tr><td><strong>稳定期（D31+）</strong></td><td>团购持续优化；开通商户通投放（日均¥30-50定向周边3公里）；保持每周5-8条新增评价</td><td>评分稳定4.5+，月销300+</td></tr>
+    <tr><td><strong>上线期</strong> D1-D7</td><td>完善门店信息+上线¥9.9团购+引导好评送饮品</td><td>10-20条评价</td></tr>
+    <tr><td><strong>冲量期</strong> D8-D30</td><td>参与新店特惠+扫码点餐引导收藏打卡</td><td>冲上工农村小吃TOP10</td></tr>
+    <tr><td><strong>稳定期</strong> D31+</td><td>商户通投放¥30-50/天+保持每周5-8条评价</td><td>评分4.5+·月销300+</td></tr>
   </table>
+  </div>
 
   <h3>🎬 抖音同城运营（甜甜姑娘核心打法）</h3>
-  <ul>
-    <li><strong>内容方向</strong>：砂锅端上来"咕嘟咕嘟"冒热气特写 + 土豆泥浇在粉上的画面 + 顾客大口嗦粉 + 出餐口排队场景</li>
-    <li><strong>账号定位</strong>：以"蜀与你"门店为主角，打造"工农村最香的一碗粉"人设</li>
-    <li><strong>发布节奏</strong>：开业首周每天1-2条 → 稳定期每周3-5条，固定午间/晚高峰前发布</li>
-    <li><strong>抖音团购</strong>：上架¥9.9单人尝鲜 + ¥29.9双人套餐，达人探店佣金15-20%</li>
-    <li><strong>达人探店</strong>：邀请塘沽/工农村本地吃喝玩乐博主3-5位（置换套餐+少量佣金）</li>
-    <li><strong>话题标签</strong>：#塘沽美食 #工农村美食 #砂锅土豆粉 #土豆泥拌粉 #滨海新区美食 #蜀与你</li>
-    <li><strong>投流预算</strong>：开业周¥50-80/天，定向塘沽工农村周边3公里+18-45岁</li>
-  </ul>
+  <div class="table-wrap">
+  <table>
+    <tr><th>板块</th><th>策略</th></tr>
+    <tr><td><strong>内容方向</strong></td><td>砂锅"咕嘟咕嘟"冒热气特写 + 土豆泥浇粉画面 + 出餐排队场景</td></tr>
+    <tr><td><strong>发布节奏</strong></td><td>开业周每天1-2条→稳定期每周3-5条，午间/晚高峰前发</td></tr>
+    <tr><td><strong>达人探店</strong></td><td>邀请塘沽本地吃喝博主3-5位（置换+佣金15-20%）</td></tr>
+    <tr><td><strong>投流预算</strong></td><td>开业周¥50-80/天，定向工农村周边3公里+18-45岁</td></tr>
+    <tr><td><strong>话题标签</strong></td><td>#塘沽美食 #工农村美食 #砂锅土豆粉 #蜀与你</td></tr>
+  </table>
+  </div>
 
   <h3>📕 小红书种草</h3>
-  <ul>
-    <li><strong>标题建议</strong>："塘沽工农村新开的砂锅土豆粉！¥9.9嗦粉太香了🔥"</li>
-    <li><strong>标题建议</strong>："土豆泥拌粉是什么神仙吃法！蜀与你砂锅土豆粉绝了"</li>
-    <li><strong>标题建议</strong>："工农村打工人午餐首选！这碗砂锅粉才¥12.9！"</li>
-    <li><strong>执行方式</strong>：开业首周邀请5-8位本地素人免费体验产出笔记；门店设置"小红书打卡立减¥2"引导UGC</li>
-  </ul>
+  <table style="min-width:auto">
+    <tr><th>类型</th><th>内容</th></tr>
+    <tr><td><strong>标题建议</strong></td><td>"塘沽工农村新开的砂锅土豆粉！¥9.9嗦粉🔥" / "土豆泥拌粉是什么神仙吃法！绝了"</td></tr>
+    <tr><td><strong>执行方式</strong></td><td>开业首周邀5-8位素人免费体验产出笔记，门店设"打卡立减¥2"引导UGC</td></tr>
+  </table>
 
-  <h3>📱 美团外卖运营（对标甜甜姑娘外卖模型）</h3>
+  <h3>📱 美团外卖运营</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>维度</th><th>策略</th></tr>
-    <tr><td><strong>门店装修</strong></td><td>头图上"热气腾腾的砂锅粉"实拍；分类清晰（砂锅粉/土豆泥系列/盖浇饭/小吃饮品）；满减设计"满25减4、满40减7"</td></tr>
-    <tr><td><strong>品类覆盖</strong></td><td>砂锅粉/面/饭全品类上线，满足午晚餐不同需求；设置"单人套餐""双人套餐""工厂团餐"三个档位</td></tr>
-    <tr><td><strong>配送范围</strong></td><td>覆盖凯旺广场周边3-5公里（工农村/宝山道/滨海职业学院/海洋高新区）</td></tr>
-    <tr><td><strong>营业时段</strong></td><td>10:00-21:00，重点冲11:00-13:00午餐时段</td></tr>
-    <tr><td><strong>活动策略</strong></td><td>新店7天"满减膨胀"（满20减8）；下午茶时段（14-17点）砂锅粉7折；满3份团餐享额外9折</td></tr>
+    <tr><td><strong>门店装修</strong></td><td>头图"砂锅冒热气"实拍·满减"满25减4、满40减7"</td></tr>
+    <tr><td><strong>品类覆盖</strong></td><td>砂锅粉/面/饭全品类·单人/双人/团餐三档</td></tr>
+    <tr><td><strong>配送范围</strong></td><td>工农村/宝山道/滨海职业学院/海洋高新区3-5公里</td></tr>
+    <tr><td><strong>营业时段</strong></td><td>10:00-21:00，重点冲11:00-13:00午餐</td></tr>
+    <tr><td><strong>活动策略</strong></td><td>新店满减膨胀·下午茶7折·团餐满3份9折</td></tr>
   </table>
+  </div>
 </div>
 
-<!-- 开业引爆 -->
-<div class="section-card">
+<!-- 5. 开业引爆 -->
+<div class="card reveal reveal-delay-1">
   <h2><span class="num">5</span> 开业引爆方案</h2>
 
   <h3>🔥 开业7天活动</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>时段</th><th>活动</th><th>规则</th><th>目的</th></tr>
-    <tr><td>D1-D3</td><td><strong>¥9.9嗦粉日</strong></td><td>经典砂锅土豆粉全场¥9.9（限堂食，每人限1份）</td><td>快速聚人气·排队效应</td></tr>
-    <tr><td>D4-D5</td><td><strong>土豆泥免费加</strong></td><td>点任意砂锅粉免费加一份土豆泥（价值¥3）</td><td>体验招牌特色·培养口碑</td></tr>
-    <tr><td>D6-D7</td><td><strong>买粉送饭</strong></td><td>点砂锅粉+¥5换购盖浇饭一份（半价福利）</td><td>展示全品类·拉客单</td></tr>
-    <tr><td>持续</td><td><strong>收藏打卡有礼</strong></td><td>美团/抖音收藏打卡→送卤蛋/豆干/酸梅汤任选1份</td><td>长期拉好评</td></tr>
+    <tr><td>D1-D3</td><td><strong style="color:#f0a070">¥9.9嗦粉日</strong></td><td>经典砂锅土豆粉全场¥9.9（限堂食）</td><td>聚人气·排队效应</td></tr>
+    <tr><td>D4-D5</td><td><strong style="color:#e8c49a">土豆泥免费加</strong></td><td>点任意砂锅粉免费加一份土豆泥</td><td>体验招牌·培养口碑</td></tr>
+    <tr><td>D6-D7</td><td><strong style="color:#8bc49a">买粉送饭</strong></td><td>点砂锅粉+¥5换购盖浇饭（半价）</td><td>展示全品类·拉客单</td></tr>
+    <tr><td>持续</td><td><strong>收藏打卡有礼</strong></td><td>美团/抖音收藏打卡→送卤蛋/豆干/酸梅汤</td><td>长期拉好评</td></tr>
   </table>
+  </div>
 
   <h3>📢 线下地推（工农村精准获客）</h3>
   <ul>
-    <li><strong>周边小区</strong>：工农村各小区门口发传单（开业¥9.9券），集中在上下班高峰派发</li>
-    <li><strong>工厂企业</strong>：凯旺广场周边工厂/工业园，午间到厂区门口发传单+试吃，推"3人团餐¥58"</li>
-    <li><strong>凯旺广场</strong>：在超市入口处/电梯口放立牌"新店开业·¥9.9嗦粉"</li>
-    <li><strong>农贸市场</strong>：工农村菜市场入口发传单，买菜的大爷大妈是潜在家庭消费决策者</li>
+    <li><strong>🏘 周边小区</strong>：工农村各小区门口发¥9.9券，集中在上下班高峰派发</li>
+    <li><strong>🏭 工厂企业</strong>：凯旺广场周边工厂/工业园，午间到厂区发传单+试吃，推"3人团餐¥49"</li>
+    <li><strong>🛒 凯旺广场</strong>：超市入口/电梯口放立牌"新店开业·¥9.9嗦粉"</li>
+    <li><strong>🥦 农贸市场</strong>：菜市场入口发传单，大爷大妈是潜在家庭消费决策者</li>
   </ul>
 </div>
 
-<!-- 私域运营 -->
-<div class="section-card">
+<!-- 6. 私域运营 -->
+<div class="card reveal reveal-delay-2">
   <h2><span class="num">6</span> 私域运营与复购体系</h2>
 
   <h3>👥 社群运营</h3>
   <ul>
-    <li><strong>入群福利</strong>：买单时引导扫码入群→领¥3优惠券（下次可用）</li>
-    <li><strong>每日推送</strong>：早上10:00"今日午餐推荐"→下午16:00"晚餐吃什么"→晚20:00"今日售罄通知"</li>
-    <li><strong>群专属福利</strong>：每周限定口味试吃、每月会员日88折、群成员专享¥2加料券</li>
-    <li><strong>首月目标</strong>：500人社群</li>
+    <li><strong>入群福利</strong>：买单扫码入群→领¥3优惠券（首月目标500人）</li>
+    <li><strong>每日推送</strong>：早10:00午餐推荐 → 下午16:00晚餐推荐 → 晚20:00售罄通知</li>
+    <li><strong>群专属</strong>：每周限定口味试吃、每月会员日88折</li>
   </ul>
 
-  <h3>🏆 会员储值体系</h3>
+  <h3>🏆 会员储值</h3>
+  <div class="table-wrap">
   <table>
-    <tr><th>储值金额</th><th>赠送</th><th>适合人群</th></tr>
-    <tr><td>充¥50</td><td>送¥8（≈8.6折）</td><td>首次体验的散客</td></tr>
+    <tr><th>储值</th><th>赠送</th><th>适用</th></tr>
+    <tr><td>充¥50</td><td>送¥8（≈8.6折）</td><td>首次散客</td></tr>
     <tr><td>充¥100</td><td>送¥20（≈8.3折）</td><td>周边常客/上班族</td></tr>
     <tr><td>充¥200</td><td>送¥50（≈8折）</td><td>工厂团餐/家庭客户</td></tr>
   </table>
+  </div>
 
   <h3>🔄 复购钩子</h3>
   <ul>
-    <li><strong>次卡</strong>：¥49任选5份砂锅粉（3个月有效，锁客利器，对标甜甜姑娘模型）</li>
-    <li><strong>集章卡</strong>：消费一次盖一章，集满8章免费换一份砂锅粉</li>
-    <li><strong>生日福利</strong>：生日当月到店免费一份砂锅粉</li>
-    <li><strong>回头客红包</strong>：外卖随单塞"感谢卡"，扫码领¥2下次可用</li>
+    <li><strong>🎫 次卡</strong>：¥49任选5份砂锅粉（3个月有效·对标甜甜姑娘锁客利器）</li>
+    <li><strong>📇 集章卡</strong>：消费一次盖一章，集满8章免费换一份</li>
+    <li><strong>🎂 生日福利</strong>：生日当月到店免费一份</li>
+    <li><strong>🧧 回头客红包</strong>：外卖随单塞感谢卡，扫码领¥2下次可用</li>
   </ul>
 </div>
 
-<!-- 线下门店规范 -->
-<div class="section-card">
-  <h2><span class="num">7</span> 线下门店体验规范（对标甜甜姑娘标准）</h2>
-  
+<!-- 7. 门店规范 -->
+<div class="card reveal">
+  <h2><span class="num">7</span> 线下门店体验规范</h2>
+
   <h3>🏪 门店形象</h3>
   <ul>
-    <li><strong>门头</strong>：暖色灯光+砂锅冒热气实拍照，突出"砂锅土豆粉"品类，让路过的人一眼知道卖什么</li>
-    <li><strong>店内</strong>：明档厨房展示砂锅出餐过程，热气腾腾的画面是天然内容素材</li>
+    <li><strong>门头</strong>：暖色灯光+砂锅冒热气实拍照，一眼知道卖什么</li>
+    <li><strong>店内</strong>：明档厨房展示砂锅出餐过程，热气腾腾是天然内容素材</li>
     <li><strong>动线</strong>：点餐→取餐→自助加料（香菜/葱花/辣椒），减少等候时间</li>
   </ul>
 
   <h3>🍳 出餐标准（甜甜姑娘运营核心）</h3>
   <ul>
-    <li><strong>砂锅温度</strong>：砂锅必须烧到滚烫上桌，端上来"咕嘟咕嘟"冒泡——这是拍照发抖音的灵魂</li>
-    <li><strong>出餐速度</strong>：单份砂锅粉出餐≤5分钟，盖浇饭≤4分钟，高峰期备好半成品</li>
-    <li><strong>标准操作</strong>：每份砂锅粉必须有标准配料表（粉量/配菜/调料），确保口味一致</li>
-    <li><strong>卫生展示</strong>：明档操作台时刻保持整洁，食材展示柜一目了然（甜甜姑娘强调"干净卫生"）</li>
+    <li><strong>砂锅温度</strong>：必须烧到滚烫上桌，"咕嘟咕嘟"冒泡——拍照发抖音的灵魂</li>
+    <li><strong>出餐速度</strong>：砂锅粉≤5分钟，盖浇饭≤4分钟，高峰期备好半成品</li>
+    <li><strong>标准操作</strong>：每份有标准配料表（粉量/配菜/调料），确保口味一致</li>
   </ul>
 
   <h3>🎤 话术规范</h3>
   <ul>
     <li><strong>迎宾</strong>："欢迎光临蜀与你！新店开业¥9.9嗦粉～"</li>
-    <li><strong>推荐</strong>："第一次来建议试试我们的招牌土豆泥砂锅粉，甜甜姑娘同款，四川风味！"</li>
-    <li><strong>引导好评</strong>："觉得好吃的话麻烦美团/抖音给我们写个好评，送您一份小饮品～"</li>
+    <li><strong>推荐</strong>："第一次来建议试试招牌土豆泥砂锅粉，甜甜姑娘同款，四川风味！"</li>
+    <li><strong>引导好评</strong>："觉得好吃的话美团/抖音写个好评，送您一份饮品～"</li>
     <li><strong>送客</strong>："好吃下次再来！扫码进群领优惠券哦～"</li>
   </ul>
 </div>
 
-<!-- KPI目标 -->
-<div class="section-card">
+<!-- 8. KPI -->
+<div class="card reveal reveal-delay-1">
   <h2><span class="num">8</span> KPI目标与执行节奏</h2>
 
-  <h3>📊 KPI目标（首月）</h3>
+  <h3>📊 首月KPI</h3>
   <div class="kpi-grid">
-    <div class="kpi-item"><div class="num">4.5+</div><div class="label">美团评分</div></div>
-    <div class="kpi-item"><div class="num">300+</div><div class="label">团购核销量</div></div>
-    <div class="kpi-item"><div class="num">70%+</div><div class="label">团购核销率</div></div>
-    <div class="kpi-item"><div class="num">500+</div><div class="label">抖音/小红书曝光</div></div>
-    <div class="kpi-item"><div class="num">500+</div><div class="label">社群人数</div></div>
-    <div class="kpi-item"><div class="num">¥3.5-5万</div><div class="label">首月营收目标</div></div>
+    <div class="kpi-item"><span class="num">4.5+</span><span class="label">⭐ 美团评分</span></div>
+    <div class="kpi-item"><span class="num">300+</span><span class="label">📦 团购核销量</span></div>
+    <div class="kpi-item"><span class="num">70%+</span><span class="label">✅ 核销率</span></div>
+    <div class="kpi-item"><span class="num">500+</span><span class="label">📱 抖音/小红书曝光</span></div>
+    <div class="kpi-item"><span class="num">500+</span><span class="label">👥 社群人数</span></div>
+    <div class="kpi-item"><span class="num">¥3.5-5万</span><span class="label">💰 首月营收</span></div>
   </div>
 
   <h3>📅 60天执行节奏</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>阶段</th><th>时间</th><th>核心动作</th><th>预算</th></tr>
-    <tr><td><strong>筹备期</strong></td><td>D-14 ~ D0</td><td>美团/抖音入驻+菜单定价+门店形象+物料准备+传单印刷</td><td>约¥1,000</td></tr>
-    <tr><td><strong>引爆期</strong></td><td>D1-D14（开业2周）</td><td>开业活动+地推+达人探店+抖音投流+美团冲量</td><td>约¥3,000-4,000</td></tr>
-    <tr><td><strong>稳定期</strong></td><td>D15-D60</td><td>常态化抖音更新+美团投流+社群运营+储值推广+外卖优化</td><td>约¥1,500-2,000/月</td></tr>
+    <tr><td><strong>筹备期</strong></td><td>D-14~D0</td><td>美团/抖音入驻+菜单定价+门店形象+物料</td><td>≈¥1,000</td></tr>
+    <tr><td><strong>引爆期</strong></td><td>D1-D14</td><td>开业活动+地推+达人探店+抖音投流+美团冲量</td><td>≈¥3,000-4,000</td></tr>
+    <tr><td><strong>稳定期</strong></td><td>D15-D60</td><td>常态化抖音+美团投流+社群+储值+外卖优化</td><td>≈¥1,500-2,000/月</td></tr>
   </table>
+  </div>
 
-  <h3>💰 首月预算估算</h3>
+  <h3>💰 首月预算</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>项目</th><th>金额</th></tr>
     <tr><td>开业活动物料（海报/传单/立牌）</td><td>¥500-800</td></tr>
     <tr><td>抖音达人探店（3-5位）</td><td>¥1,000-2,000</td></tr>
     <tr><td>抖音投流（开业周）</td><td>¥500-800</td></tr>
     <tr><td>小红书素人（5-8位）</td><td>¥600-1,000</td></tr>
-    <tr><td>美团团购上线/商户通</td><td>¥1,500-2,500</td></tr>
+    <tr><td>美团商户通/团购上线</td><td>¥1,500-2,500</td></tr>
     <tr><td>地推物料+人工</td><td>¥500-800</td></tr>
-    <tr><td><strong>首月总预算</strong></td><td><strong>约¥4,600-7,900</strong></td></tr>
+    <tr><td><strong>合计</strong></td><td><strong>≈¥4,600-7,900</strong></td></tr>
   </table>
+  </div>
 
   <div class="highlight">
-    <strong>📈 营收测算（人均¥15-20）：</strong><br>
+    <strong>📈 营收测算（人均¥15-20 · 50㎡）：</strong><br>
     日均70-110客单 × 人均¥17 = 日均¥1,190-1,870 × 30天 = 首月营收¥35,700-56,100<br>
-    扣除团购折扣（约8折）→ 实际到手约¥28,560-44,880<br>
-    外卖占比约40%（日均¥476-748），扣除平台抽佣20% → 到手¥381-598/天<br>
-    <strong>首月目标：盈亏平衡，次月起盈利（50㎡小店·轻资产运营）</strong>
+    扣除团购折扣（约8折）→ 实际到手约¥28,560-44,880&nbsp;&nbsp;|&nbsp;&nbsp;<strong>首月目标：盈亏平衡，次月起盈利</strong>
   </div>
 </div>
 
-<!-- 一句话总结 -->
-<div class="section-card">
-  <h2><span class="num">9</span> 一句话总结</h2>
-  <p style="font-size:1.05rem;text-align:center;padding:16px 0;color:#3d1c0c">
+<!-- 9. 总结 -->
+<div class="summary-card reveal reveal-delay-2">
+  <h2>🥔 一句话总结</h2>
+  <p>
     <strong>蜀与你砂锅土豆粉，对标甜甜姑娘百店模型——<br>
     以砂锅土豆粉立品类，以土豆泥拌粉拉复购，以外卖+堂食双线冲量，<br>
     做工农村"最香最实惠的那碗粉"。</strong>
   </p>
-  <p style="text-align:center;color:#888;font-size:.8rem">
-    方案生成时间：2026-05-20 | 适用：蜀与你砂锅土豆粉 · 塘沽工农村凯旺广场店
-  </p>
+  <div class="meta">
+    🗓 方案生成：2026-05-20 &nbsp;|&nbsp; 适用：蜀与你砂锅土豆粉 · 塘沽工农村凯旺广场店
+  </div>
 </div>
 
 </div>
+
+<script>
+// 滚动触发动画
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: .1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
