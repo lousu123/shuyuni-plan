@@ -3,301 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>薯与你砂锅土豆粉 · 运营营销方案</title>
+<title>薯与你砂锅土豆粉 · 开业整合营销方案</title>
 <style>
-@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-8px) rotate(3deg)}75%{transform:translateY(-4px) rotate(-2deg)}}
-@keyframes bounce{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.05)}}
-@keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
-@keyframes steam{0%{opacity:0.7;transform:translateY(0) scaleX(1)}100%{opacity:0;transform:translateY(-30px) scaleX(2)}}
-@keyframes cardEnter{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes steam{0%{opacity:.6;transform:translateY(0) scaleX(1)}100%{opacity:0;transform:translateY(-35px) scaleX(2)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:linear-gradient(170deg,#faf6f0 0%,#f0e8dd 30%,#e8dcc8 70%,#f5ede4 100%);font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,-apple-system,sans-serif;color:#3a2a1a;line-height:1.8;overflow-x:hidden;min-height:100vh}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4956a' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;z-index:0}
-.container{max-width:960px;margin:0 auto;padding:12px 12px 60px;position:relative;z-index:1}
-.potato-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:hidden}
-.potato{position:absolute;font-size:24px;opacity:0.25;animation:float 6s ease-in-out infinite}
-.potato:nth-child(1){top:10%;left:5%;animation-delay:0s;font-size:20px}
-.potato:nth-child(2){top:25%;right:8%;animation-delay:1.2s;font-size:28px}
-.potato:nth-child(3){top:45%;left:3%;animation-delay:2.5s;font-size:18px}
-.potato:nth-child(4){top:60%;right:5%;animation-delay:0.8s;font-size:22px}
-.potato:nth-child(5){top:78%;left:7%;animation-delay:3.2s;font-size:16px}
-.potato:nth-child(6){top:15%;right:3%;animation-delay:4s;font-size:14px}
-.potato:nth-child(7){top:70%;left:2%;animation-delay:1.8s;font-size:20px}
-.potato:nth-child(8){top:85%;right:6%;animation-delay:2.2s;font-size:26px}
-.potato:nth-child(9){top:35%;left:8%;animation-delay:3.8s;font-size:15px}
-.potato:nth-child(10){top:50%;right:3%;animation-delay:0.5s;font-size:19px}
-.hero{position:relative;text-align:center;padding:40px 24px 36px;margin-bottom:20px;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#5a2d0c 0%,#8b4513 30%,#a0522d 60%,#6b3410 100%);background-size:200% 200%;animation:gradientShift 8s ease infinite;box-shadow:0 8px 32px rgba(90,45,12,0.3)}
-.hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,200,150,0.1) 0%,transparent 60%);pointer-events:none}
-.hero-badge{display:inline-block;background:rgba(255,200,150,0.2);backdrop-filter:blur(10px);border:1px solid rgba(255,200,150,0.3);padding:4px 16px;border-radius:20px;font-size:.75rem;color:#ffd7b0;letter-spacing:1px;margin-bottom:12px}
-.hero h1{font-size:2.2rem;color:#fff7ed;position:relative;z-index:1;letter-spacing:2px}
-.hero h1 .potato-icon{display:inline-block;animation:bounce 2s ease-in-out infinite}
-.hero h1 small{display:block;font-size:.95rem;font-weight:400;opacity:.85;margin-top:6px;letter-spacing:1px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:14px 0 0;position:relative;z-index:1}
-.hero-tag{padding:3px 14px;border-radius:12px;font-size:.75rem;background:rgba(255,255,255,0.12);backdrop-filter:blur(4px);color:#ffd7b0;border:1px solid rgba(255,255,255,0.08)}
-.hero-tag.hot{background:rgba(255,180,80,0.25);border-color:rgba(255,180,80,0.3)}
-.hero .steam-line{position:absolute;width:4px;height:20px;background:rgba(255,255,255,0.1);border-radius:2px;animation:steam 2s ease-out infinite}
-.hero .steam-line:nth-child(2n){left:22%;animation-delay:0.3s}
-.hero .steam-line:nth-child(3n){left:48%;animation-delay:0.8s}
-.hero .steam-line:nth-child(4n){left:72%;animation-delay:1.2s}
-.hero .steam-line:nth-child(5n){left:88%;animation-delay:0.5s}
-.info-card{background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border-radius:16px;padding:20px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.6);box-shadow:0 2px 20px rgba(90,45,12,0.06);animation:cardEnter 0.6s ease-out forwards;transition:transform 0.3s,box-shadow 0.3s}
-.info-card:hover{transform:translateY(-2px);box-shadow:0 4px 30px rgba(90,45,12,0.1)}
-.info-card:nth-child(2){animation-delay:0.08s}
-.info-card:nth-child(3){animation-delay:0.15s}
-.info-card:nth-child(4){animation-delay:0.22s}
-.card-title{font-size:1.15rem;font-weight:700;color:#3d1c0c;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #f0e8dd;display:flex;align-items:center;gap:8px}
-.card-title .em{font-size:1.2rem;animation:wiggle 2s ease-in-out infinite;display:inline-block}
-.card-title .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#8b4513,#a0522d);color:#fff;font-size:.8rem;font-weight:700;margin-right:4px}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
-.info-item{background:rgba(250,245,240,0.6);padding:10px 12px;border-radius:10px;transition:background 0.2s;display:flex;flex-direction:column}
-.info-item:hover{background:rgba(240,230,218,0.8)}
-.info-item .label{font-size:.7rem;color:#a08060;letter-spacing:0.5px}
-.info-item .value{font-size:.9rem;font-weight:700;color:#3d1c0c;margin-top:2px}
-.highlight{background:linear-gradient(135deg,#fcf8f3 0%,#faf3ea 100%);border-left:3px solid #c4956a;border-radius:0 12px 12px 0;padding:14px 18px;margin:12px 0;font-size:.88rem;position:relative}
-.highlight::before{content:'💡';position:absolute;top:-8px;left:-8px;font-size:18px;animation:bounce 2.5s ease-in-out infinite}
-.highlight strong{color:#5a2d0c}
-.table-wrap{overflow-x:auto;margin:10px 0 14px;border-radius:10px;border:1px solid #f0e8dd}
-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:520px}
-th{background:linear-gradient(135deg,#5a2d0c,#7a3d12);color:#f7ede4;padding:9px 10px;text-align:left;font-weight:600;white-space:nowrap}
-td{padding:8px 10px;border-bottom:1px solid #f0e8dd;color:#4a3a2a}
-tr:last-child td{border-bottom:none}
-tr:nth-child(even) td{background:rgba(250,245,240,0.4)}
-tr:hover td{background:rgba(240,230,218,0.3)}
-.price{color:#c0392b;font-weight:700}
-.price.hot{color:#e74c3c;font-weight:800}
-ul,ol{padding-left:18px;margin:6px 0 10px}
-li{font-size:.88rem;margin-bottom:5px;color:#4a3a2a;line-height:1.7}
-li::marker{color:#c4956a}
-.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
-.kpi-item{text-align:center;padding:14px 6px;background:linear-gradient(135deg,#fcf8f3,#faf3ea);border-radius:12px;border:1px solid #f0e8dd;transition:transform 0.2s,box-shadow 0.2s}
-.kpi-item:hover{transform:translateY(-3px);box-shadow:0 4px 15px rgba(0,0,0,0.06)}
-.kpi-item .num{font-size:1.1rem;font-weight:800;color:#5a2d0c}
-.kpi-item .label{font-size:.68rem;color:#a08060;margin-top:1px;letter-spacing:0.3px}
-.seat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.seat-section{border-radius:12px;padding:14px;text-align:center}
-.seat-section.indoor{background:linear-gradient(135deg,#fcf8f3,#f5ede4);border:1px solid #e8dcc8}
-.seat-section.outdoor{background:linear-gradient(135deg,#f0f7ee,#e4f0e0);border:1px solid #c8dcc0}
-.seat-section h4{font-size:.85rem;margin-bottom:6px;color:#5a2d0c}
-.seat-section .icon-group{font-size:.7rem;color:#a08060;margin-bottom:6px}
-.seat-section .total{font-size:1.4rem;font-weight:800;color:#3d1c0c}
-.seat-section .total small{font-size:.7rem;font-weight:400;color:#a08060}
-.seat-detail{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
-.seat-item{background:rgba(255,255,255,0.6);border-radius:8px;padding:8px;font-size:.8rem}
-.seat-item .count{font-weight:700;color:#5a2d0c}
-.phase-grid{display:grid;gap:8px;margin:8px 0}
-.phase-item{display:grid;grid-template-columns:80px 1fr;gap:8px;padding:10px 12px;border-radius:10px;align-items:start}
-.phase-item.prep{background:linear-gradient(135deg,#fcf8f3,#f5ede4)}
-.phase-item.launch{background:linear-gradient(135deg,#fdf6ec,#fce8d0)}
-.phase-item.stable{background:linear-gradient(135deg,#f0f7ee,#e4f0e0)}
-.phase-item .phase-label{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:6px;text-align:center;white-space:nowrap}
-.phase-item.prep .phase-label{background:#e8dcc8;color:#5a4a3a}
-.phase-item.launch .phase-label{background:#f0c080;color:#5a2d0c}
-.phase-item.stable .phase-label{background:#b8d4a8;color:#2a4a1a}
-.phase-item .phase-desc{font-size:.82rem;color:#4a3a2a}
-.phase-item .phase-desc small{font-size:.7rem;color:#a08060;display:block;margin-top:2px}
-.budget-grid{display:grid;gap:6px;margin:10px 0}
-.budget-row{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(250,245,240,0.5);border-radius:8px;font-size:.82rem}
-.budget-row.total{background:rgba(90,45,12,0.06);font-weight:700;border:1px solid rgba(196,149,106,0.3)}
-.budget-row .item{color:#4a3a2a}.budget-row .amount{color:#5a2d0c;font-weight:600}
-.footer{text-align:center;padding:20px;margin-top:24px;background:rgba(255,255,255,0.6);backdrop-filter:blur(10px);border-radius:16px;border:1px solid rgba(255,255,255,0.6);animation:fadeUp 0.8s ease-out forwards;animation-delay:0.3s;opacity:0}
-.footer .tagline{font-size:1rem;color:#3d1c0c;font-weight:600;margin-bottom:6px}
-.footer .meta{font-size:.75rem;color:#a08060}
-@media(max-width:640px){.container{padding:8px 8px 40px}.hero{padding:28px 16px 30px;border-radius:14px}.hero h1{font-size:1.5rem}.hero h1 small{font-size:.8rem}.info-card{padding:16px;border-radius:12px}.card-title{font-size:1rem}.info-grid{gap:6px}.info-item{padding:8px 10px}.info-item .value{font-size:.82rem}.kpi-grid{grid-template-columns:repeat(3,1fr);gap:6px}.kpi-item{padding:10px 4px}.kpi-item .num{font-size:.95rem}.table-wrap{margin:8px -6px;border-radius:0;border-left:none;border-right:none}table{font-size:.75rem;min-width:460px}th,td{padding:6px 8px}.highlight{padding:12px 14px;font-size:.82rem}.seat-grid{grid-template-columns:1fr}.phase-item{grid-template-columns:65px 1fr;padding:8px 10px}.potato{opacity:0.15;font-size:18px!important}}
-.potato-divider{text-align:center;margin:8px 0 14px;font-size:13px;animation:pulse 3s ease-in-out infinite;letter-spacing:4px}
+body{background:linear-gradient(170deg,#fcf9f5,#f5ede4 40%,#f0e6d8 70%,#faf3ea);font-family:'PingFang SC','Microsoft YaHei',system-ui,-apple-system,sans-serif;color:#3a2a1a;line-height:1.8;overflow-x:hidden}
+.container{max-width:960px;margin:0 auto;padding:12px 12px 50px;position:relative;z-index:1}
+.hero{position:relative;text-align:center;padding:36px 20px 30px;margin-bottom:18px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#5a2d0c,#8b4513 35%,#6b3410 65%,#4a2208);box-shadow:0 6px 30px rgba(90,45,12,.25)}
+.hero h1{font-size:1.8rem;color:#fff7ed;position:relative;z-index:1}
+.hero h1 .p{display:inline-block;animation:float 2.5s ease-in-out infinite}
+.hero h1 small{display:block;font-size:.85rem;font-weight:400;opacity:.8;margin-top:4px}
+.hero .badge{display:inline-block;background:rgba(255,200,150,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,200,150,.2);padding:3px 14px;border-radius:16px;font-size:.7rem;color:#ffd7b0;margin-bottom:10px}
+.hero .tags{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin:12px 0 0;position:relative;z-index:1}
+.hero .t{padding:3px 12px;border-radius:10px;font-size:.7rem;background:rgba(255,255,255,.1);color:#ffd7b0;border:1px solid rgba(255,255,255,.06)}
+.hero .t.h{background:rgba(255,180,80,.2);border-color:rgba(255,180,80,.25)}
+.steam{position:absolute;width:3px;height:18px;background:rgba(255,255,255,.08);border-radius:2px;animation:steam 2.5s ease-out infinite}
+.steam:nth-child(2n){left:15%}.steam:nth-child(3n){left:35%;animation-delay:.6s}.steam:nth-child(4n){left:55%;animation-delay:1s}.steam:nth-child(5n){left:75%;animation-delay:1.4s}.steam:nth-child(6n){left:90%;animation-delay:.3s}
+.card{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-radius:14px;padding:20px;margin-bottom:16px;border:1px solid rgba(255,255,255,.5);box-shadow:0 2px 16px rgba(90,45,12,.04);animation:slideUp .5s ease-out forwards;opacity:0}
+.card:nth-child(2){animation-delay:.08s}.card:nth-child(3){animation-delay:.15s}.card:nth-child(4){animation-delay:.22s}.card:nth-child(5){animation-delay:.3s}.card:nth-child(6){animation-delay:.38s}.card:nth-child(7){animation-delay:.45s}.card:nth-child(8){animation-delay:.52s}.card:nth-child(9){animation-delay:.6s}
+.card:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(90,45,12,.08);transition:all .3s}
+.card-title{font-size:1.1rem;font-weight:700;color:#3d1c0c;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid #f0e8dd;display:flex;align-items:center;gap:8px}
+.card-title .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8b4513,#a0522d);color:#fff;font-size:.75rem;font-weight:700;flex-shrink:0}
+.tw{overflow-x:auto;margin:10px 0 12px;border-radius:10px;border:1px solid #f0e8dd}
+table{width:100%;border-collapse:collapse;font-size:.8rem;min-width:560px}
+th{background:linear-gradient(135deg,#5a2d0c,#7a3d12);color:#f7ede4;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid #f0e8dd;color:#4a3a2a}
+tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:rgba(250,245,240,.3)}
+.pr{color:#c0392b;font-weight:700}.prh{color:#e74c3c;font-weight:800}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0}
+.gi{background:rgba(250,245,240,.5);padding:10px 12px;border-radius:8px}
+.gi .l{font-size:.68rem;color:#a08060}.gi .v{font-size:.85rem;font-weight:700;color:#3d1c0c;margin-top:1px}
+.hl{background:linear-gradient(135deg,#fcf8f3,#faf3ea);border-left:3px solid #c4956a;border-radius:0 10px 10px 0;padding:12px 16px;margin:12px 0;font-size:.85rem}
+.hl strong{color:#5a2d0c}
+ul,ol{padding-left:18px;margin:2px 0 8px}li{font-size:.85rem;margin-bottom:4px;color:#4a3a2a}
+.kg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0}
+.ki{text-align:center;padding:12px 4px;background:linear-gradient(135deg,#fcf8f3,#faf3ea);border-radius:10px;border:1px solid #f0e8dd}
+.ki .n{font-size:1rem;font-weight:800;color:#5a2d0c}.ki .l{font-size:.65rem;color:#a08060;margin-top:1px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.fi{background:linear-gradient(135deg,#fcf8f3,#faf3ea);padding:12px;border-radius:10px;text-align:center;border:1px solid #f0e8dd}
+.fi .ic{font-size:1.5rem}.fi .t{font-weight:700;font-size:.82rem;color:#5a2d0c;margin:2px 0}.fi .d{font-size:.72rem;color:#6a5a4a}
+.pg{display:grid;gap:6px;margin:8px 0}
+.pr2{display:grid;grid-template-columns:75px 1fr;gap:6px;padding:8px 10px;border-radius:8px;align-items:start}
+.pr2.prp{background:linear-gradient(135deg,#fcf8f3,#f5ede4)}
+.pr2.lch{background:linear-gradient(135deg,#fdf6ec,#fce8d0)}
+.pr2.stb{background:linear-gradient(135deg,#f0f7ee,#e4f0e0)}
+.pr2 .tg{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:5px;text-align:center}
+.pr2.prp .tg{background:#e8dcc8;color:#5a4a3a}
+.pr2.lch .tg{background:#f0c080;color:#5a2d0c}
+.pr2.stb .tg{background:#b8d4a8;color:#2a4a1a}
+.pr2 .dc{font-size:.78rem;color:#4a3a2a}.pr2 .dc sm{font-size:.68rem;color:#a08060;display:block;margin-top:2px}
+.bd{display:grid;gap:4px;margin:8px 0}
+.br{display:flex;justify-content:space-between;padding:6px 10px;background:rgba(250,245,240,.4);border-radius:6px;font-size:.78rem}
+.br.tt{background:rgba(90,45,12,.05);font-weight:700;border:1px solid rgba(196,149,106,.25)}
+.dv{text-align:center;margin:6px 0 10px;font-size:14px;opacity:.4;letter-spacing:3px}
+.footer{text-align:center;padding:18px;margin-top:16px;background:rgba(255,255,255,.65);backdrop-filter:blur(10px);border-radius:14px;border:1px solid rgba(255,255,255,.5)}
+.footer .mt{font-size:.95rem;color:#3d1c0c;font-weight:600}.footer .me{font-size:.7rem;color:#a08060;margin-top:4px}
+.tg{display:inline-block;padding:1px 8px;border-radius:4px;font-size:.68rem;font-weight:600}
+.tgg{background:rgba(50,180,80,.1);color:#2a7a3a}.tgy{background:rgba(255,180,50,.15);color:#8a6a20}
+@media(max-width:640px){
+  .container{padding:8px 8px 40px}.hero{padding:28px 14px 24px;border-radius:12px}.hero h1{font-size:1.4rem}
+  .card{padding:14px;border-radius:10px}.card-title{font-size:1rem}.gr{gap:4px}.gi{padding:8px}.gi .v{font-size:.8rem}
+  .kg{gap:4px}.ki{padding:10px 4px}.ki .n{font-size:.9rem}.fg{grid-template-columns:1fr 1fr;gap:6px}
+  .tw{margin:6px -4px;border-radius:0}table{font-size:.72rem;min-width:480px}th,td{padding:5px 7px}
+  .pr2{grid-template-columns:60px 1fr;padding:6px 8px}
+}
 </style>
 </head>
 <body>
-<div class="potato-container">
-  <span class="potato">🥔</span><span class="potato">🥔</span><span class="potato">🥔</span>
-  <span class="potato">🥔</span><span class="potato">🥔</span><span class="potato">🥔</span>
-  <span class="potato">🥔</span><span class="potato">🥔</span><span class="potato">🥔</span>
-  <span class="potato">🥔</span>
-</div>
 <div class="container">
 <div class="hero">
-  <div class="steam-line"></div><div class="steam-line"></div><div class="steam-line"></div>
-  <div class="steam-line"></div><div class="steam-line"></div>
-  <div class="hero-badge">🥔 塘沽工农村 · 凯旺广场</div>
-  <h1><span class="potato-icon">🥔</span> 薯与你砂锅土豆粉<small>独立品牌 · 58㎡ · 室内40座+外摆16座 · 人均¥15-20</small></h1>
-  <div class="hero-tags">
-    <span class="hero-tag hot">🔥 新店开业</span>
-    <span class="hero-tag">砂锅土豆粉</span>
-    <span class="hero-tag">🥔 土豆泥</span>
-    <span class="hero-tag">🍚 盖浇饭</span>
-    <span class="hero-tag">🍝 土豆泥盖浇面</span>
+  <div class="steam"></div><div class="steam"></div><div class="steam"></div><div class="steam"></div><div class="steam"></div>
+  <div class="badge">🥔 塘沽工农村 · 凯旺广场</div>
+  <h1><span class="p">🥔</span> 薯与你砂锅土豆粉<small>开业整合营销方案 · 美团点评+外卖+智能收银</small></h1>
+  <div class="tags">
+    <span class="t h">🔥 新店开业</span><span class="t">砂锅土豆粉</span><span class="t">土豆泥</span><span class="t">美团智能收银</span>
   </div>
 </div>
-<div class="info-card">
-  <div class="card-title"><span class="num">1</span> <span class="em">📋</span> 项目全景</div>
-  <div class="info-grid">
-    <div class="info-item"><div class="label">🏪 店名</div><div class="value">薯与你砂锅土豆粉</div></div>
-    <div class="info-item"><div class="label">⭐ 星级</div><div class="value">暂无星级（新店）</div></div>
-    <div class="info-item"><div class="label">🍜 品类</div><div class="value">小吃快餐</div></div>
-    <div class="info-item"><div class="label">📍 位置</div><div class="value">塘沽工农村·凯旺广场</div></div>
-    <div class="info-item"><div class="label">📐 面积</div><div class="value">室内58㎡</div></div>
-    <div class="info-item"><div class="label">💰 人均</div><div class="value">¥15-20</div></div>
-    <div class="info-item"><div class="label">👥 客群</div><div class="value">工农村居民+工厂上班族</div></div>
-    <div class="info-item"><div class="label">🏢 属性</div><div class="value">自有独立品牌</div></div>
+
+<div class="card"><div class="card-title"><span class="n">1</span> 📋 项目全景</div>
+  <div class="gr">
+    <div class="gi"><div class="l">🏪 店名</div><div class="v">薯与你砂锅土豆粉</div></div>
+    <div class="gi"><div class="l">⭐ 星级</div><div class="v">暂无星级（新店）</div></div>
+    <div class="gi"><div class="l">🍜 品类</div><div class="v">小吃快餐</div></div>
+    <div class="gi"><div class="l">📍 位置</div><div class="v">塘沽工农村·凯旺广场</div></div>
+    <div class="gi"><div class="l">📐 室内</div><div class="v">58㎡</div></div>
+    <div class="gi"><div class="l">💰 人均</div><div class="v">¥15-20</div></div>
+    <div class="gi"><div class="l">👥 客群</div><div class="v">工农村居民+上班族+工厂</div></div>
+    <div class="gi"><div class="l">🏢 系统</div><div class="v">美团智能版收银系统</div></div>
   </div>
-  <div class="highlight"><strong>核心洞察：</strong>塘沽工农村是滨海新区老牌生活区+工业区，周边大量居民小区和工厂企业。凯旺广场是工农村商业集中地，客群以工薪阶层和工厂工人为主。58㎡小店做砂锅土豆粉，出餐快、翻台高、坪效好——人均¥15-20完美契合需求，比普通快餐更有记忆点，比正餐更轻更快。</div>
+  <div class="hl" style="margin-top:8px"><strong>🪑 座位布局：</strong>室内58㎡ → 12双人座+4四人座（40位）· 外摆区 → 8双人座（16位）· <strong>总计56位</strong></div>
+  <div class="hl"><strong>💡 核心洞察：</strong>塘沽工农村是滨海新区老牌生活区+工业区，58㎡小店+外摆布局，出餐快、翻台高、坪效好。引入美团智能版收银系统，实现线上线下数据打通、会员一体化管理、团购外卖自动核销——用系统能力降本提效，用平台流量做拉新复购。</div>
 </div>
-<div class="info-card">
-  <div class="card-title"><span class="num">2</span> <span class="em">🪑</span> 店内排位与布局</div>
-  <div class="seat-grid">
-    <div class="seat-section indoor">
-      <div class="icon-group">🏠 室内 · 58㎡</div>
-      <div class="total">40 <small>座</small></div>
-      <div class="seat-detail">
-        <div class="seat-item"><div class="count">🪑 12个双人座</div><div style="font-size:.72rem;color:#a08060">× 2人 = 24位</div></div>
-        <div class="seat-item"><div class="count">🪑 4个四人座</div><div style="font-size:.72rem;color:#a08060">× 4人 = 16位</div></div>
-      </div>
-    </div>
-    <div class="seat-section outdoor">
-      <div class="icon-group">🌿 外摆</div>
-      <div class="total">16 <small>座</small></div>
-      <div class="seat-detail">
-        <div class="seat-item"><div class="count">🪑 8个双人座</div><div style="font-size:.72rem;color:#a08060">× 2人 = 16位</div></div>
-      </div>
-    </div>
-  </div>
-  <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px;font-size:.85rem"><strong>📐 空间建议：</strong>58㎡室内 ≈ 厨房/出餐区15-18㎡ + 堂食区25-28㎡ + 过道/收银10-12㎡。12双人座沿窗靠墙，4个四人座居中；外摆8个双人利用门前空间，天气好时翻台主力。</div>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
-</div>
-<div class="info-card">
-  <div class="card-title"><span class="num">3</span> <span class="em">🍜</span> 产品结构与定价</div>
-  <div class="table-wrap"><table><tr><th style="width:100px">品类</th><th>产品</th><th>定价</th><th>定位</th></tr>
-    <tr><td><strong>🔥 引流爆款</strong></td><td>经典砂锅土豆粉（原味/微辣/麻辣）</td><td class="price">¥12.9</td><td>新客尝鲜·冲销量</td></tr>
-    <tr><td><strong>🥔 招牌特色</strong></td><td>薯与你土豆泥砂锅粉</td><td class="price">¥15.9-17.9</td><td>招牌必点·毛利主力</td></tr>
-    <tr><td><strong>🍚 管饱系列</strong></td><td>盖浇饭（鱼香肉丝/宫保鸡丁/红烧肉）</td><td class="price">¥16.9-18.9</td><td>中午管饱客群</td></tr>
-    <tr><td><strong>🍝 创意面系列</strong></td><td>土豆泥盖浇面/砂锅刀削面（两掺）</td><td class="price">¥14.9-16.9</td><td>差异化爆款</td></tr>
-    <tr><td><strong>🧃 小吃饮品</strong></td><td>小酥肉/冰粉/酸梅汤/凉糕</td><td class="price">¥4-8</td><td>拉客单价</td></tr>
+
+<div class="card"><div class="card-title"><span class="n">2</span> 🔍 门店诊断</div>
+  <div class="tw"><table><tr><th style="width:60px">维度</th><th>分析</th></tr>
+    <tr><td><strong>✅ 优势</strong></td><td>蜀地风味有差异化；砂锅自带烟火气传播属性；品类覆盖全时段</td></tr>
+    <tr><td><strong>⚠️ 劣势</strong></td><td>新店无口碑/星级/销量；凯旺广场非顶级商圈</td></tr>
+    <tr><td><strong>🚀 机会</strong></td><td>土豆粉品类稀缺；美团收银打通全渠道；工厂外卖需求大</td></tr>
+    <tr><td><strong>🛡 威胁</strong></td><td>周边同类竞品；外卖平台抽佣</td></tr>
   </table></div>
-  <div class="table-wrap"><table><tr><th>平台</th><th>套餐</th><th>内容</th><th>原价</th><th style="width:60px">售价</th></tr>
-    <tr><td>美团/抖音</td><td>新客尝鲜</td><td>经典砂锅土豆粉×1</td><td>¥14.9</td><td class="price hot">¥9.9</td></tr>
-    <tr><td>美团/抖音</td><td>双人嗦粉套餐</td><td>土豆泥砂锅粉×2 + 小酥肉×1 + 酸梅汤×2</td><td>¥42</td><td class="price">¥26.9</td></tr>
-    <tr><td>美团/抖音</td><td>单人饱饱餐</td><td>盖浇饭/盖浇面任选 + 冰粉</td><td>¥21.9</td><td class="price">¥14.9</td></tr>
-    <tr><td>外卖</td><td>打工人午餐</td><td>砂锅粉+小吃+饮品（工作日11-13点）</td><td>¥24.9</td><td class="price">¥16.9</td></tr>
-    <tr><td>外卖</td><td>3人团餐</td><td>砂锅粉×3 + 盖浇饭×1 + 小食×2</td><td>¥79</td><td class="price">¥49</td></tr>
+  <div class="hl"><strong>🎯 核心策略：</strong>「以美团点评做口碑+美团外卖冲销量+美团智能收银系统管运营——三驾马车齐驱」</div>
+  <div class="dv">🥔 🥔 🥔</div>
+</div>
+
+<div class="card"><div class="card-title"><span class="n">3</span> 🍜 产品结构与定价</div>
+  <div class="tw"><table><tr><th>品类</th><th>产品</th><th>定价</th><th>定位</th></tr>
+    <tr><td><strong>🔥 引流爆款</strong></td><td>经典砂锅土豆粉（原味/微辣/麻辣）</td><td class="pr">¥12.9</td><td>新客尝鲜·跑量</td></tr>
+    <tr><td><strong>🥔 招牌特色</strong></td><td>薯与你土豆泥砂锅粉</td><td class="pr">¥15.9-17.9</td><td>招牌必点·利润主力</td></tr>
+    <tr><td><strong>🍚 管饱系列</strong></td><td>盖浇饭（鱼香肉丝/宫保鸡丁/红烧肉）</td><td class="pr">¥16.9-18.9</td><td>午餐管饱客群</td></tr>
+    <tr><td><strong>🍝 创意面系列</strong></td><td>土豆泥盖浇面/砂锅刀削面（两掺）</td><td class="pr">¥14.9-16.9</td><td>差异化产品</td></tr>
+    <tr><td><strong>🧃 小吃饮品</strong></td><td>小酥肉/冰粉/酸梅汤/凉糕</td><td class="pr">¥4-8</td><td>拉客单价</td></tr>
   </table></div>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
-</div>
-<div class="info-card">
-  <div class="card-title"><span class="num">4</span> <span class="em">🔥</span> 美团大众点评运营（核心）</div>
-  <h3 style="font-size:.92rem;color:#5a2d0c;margin-bottom:8px"><span>📋</span> 三阶段冲量</h3>
-  <div class="table-wrap"><table><tr><th>阶段</th><th>核心动作</th><th>目标</th></tr>
-    <tr><td><strong>上线期</strong><br><span style="font-size:.7rem;color:#a08060">D1-D7</span></td><td>完善门店信息·砂锅冒热气头图·上线¥9.9团购·好评送饮品</td><td><strong>10-20条评价</strong></td></tr>
-    <tr><td><strong>冲量期</strong><br><span style="font-size:.7rem;color:#a08060">D8-D30</span></td><td>团购冲200单·新店流量扶持·扫码收藏打卡送卤蛋</td><td><strong>工农村小吃TOP10</strong></td></tr>
-    <tr><td><strong>稳定期</strong><br><span style="font-size:.7rem;color:#a08060">D31+</span></td><td>商户通¥30-50/天定向3公里·每周5-8条评价</td><td><strong>评分4.5+·月销300+</strong></td></tr>
+  <div class="tw"><table><tr><th>平台</th><th>套餐</th><th>内容</th><th>售价</th><th>收银配合</th></tr>
+    <tr><td>美团团购</td><td>🥇 新客尝鲜单人</td><td>经典砂锅土豆粉×1</td><td class="prh">¥9.9</td><td><span class="tg tgg">自动核销</span></td></tr>
+    <tr><td>美团团购</td><td>🥈 双人嗦粉套餐</td><td>土豆泥砂锅粉×2+小酥肉+酸梅汤×2</td><td class="pr">¥26.9</td><td><span class="tg tgg">自动核销</span></td></tr>
+    <tr><td>美团团购</td><td>🥉 单人饱饱餐</td><td>盖浇饭/盖浇面+冰粉</td><td class="pr">¥14.9</td><td><span class="tg tgg">自动核销</span></td></tr>
+    <tr><td>美团外卖</td><td>💼 打工人午餐套餐</td><td>砂锅粉+小吃+饮品（工作日11-13点）</td><td class="pr">¥16.9</td><td><span class="tg tgg">自动接单</span></td></tr>
+    <tr><td>美团外卖</td><td>🏭 3人团餐·工厂特惠</td><td>砂锅粉×3+盖浇饭×1+小食×2</td><td class="pr">¥49</td><td><span class="tg tgg">自动接单</span></td></tr>
   </table></div>
-  <h3 style="font-size:.92rem;color:#5a2d0c;margin:14px 0 8px"><span>🎯</span> 点评运营重点</h3>
-  <ul>
-    <li><strong>头图策略：</strong>首图必须是砂锅咕嘟冒热气实拍，第二张土豆泥浇粉特写</li>
-    <li><strong>评价引导：</strong>每单结账话术→"觉得好吃麻烦写个好评，送您饮品～"</li>
-    <li><strong>差评处理：</strong>24小时内回复，态度诚恳不推诿，私信补偿挽回</li>
-    <li><strong>榜单冲刺：</strong>高核销+高评分+高收藏，冲"工农村小吃快餐热门榜"</li>
-    <li><strong>商户通：</strong>定向塘沽工农村3公里，18-45岁，午晚高峰前加价</li>
-  </ul>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
+  <div class="dv">🥔 🥔 🥔</div>
 </div>
-<div class="info-card">
-  <div class="card-title"><span class="num">5</span> <span class="em">📱</span> 外卖营销方案</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
-    <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px">
-      <div style="font-weight:700;font-size:.85rem;color:#5a2d0c;margin-bottom:6px">🏪 门店装修</div><ul style="padding-left:14px;font-size:.82rem"><li>头图：砂锅冒热气实拍</li><li>分类：砂锅粉/土豆泥/盖浇饭/小吃饮品</li><li>满减：满25减4·满40减7</li></ul>
-    </div>
-    <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px">
-      <div style="font-weight:700;font-size:.85rem;color:#5a2d0c;margin-bottom:6px">🍽 品类覆盖</div><ul style="padding-left:14px;font-size:.82rem"><li>砂锅粉/面/饭全品类</li><li>单人/双人/团餐三档</li><li>下午茶砂锅粉7折</li></ul>
-    </div>
-    <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px">
-      <div style="font-weight:700;font-size:.85rem;color:#5a2d0c;margin-bottom:6px">📍 配送范围</div><ul style="padding-left:14px;font-size:.82rem"><li>覆盖3-5公里</li><li>工农村/宝山道/滨海职业学院</li></ul>
-    </div>
-    <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px">
-      <div style="font-weight:700;font-size:.85rem;color:#5a2d0c;margin-bottom:6px">⚡ 活动策略</div><ul style="padding-left:14px;font-size:.82rem"><li>新店7天满减膨胀</li><li>重点冲11-13点午餐</li><li>团餐满3份9折</li></ul>
-    </div>
-  </div>
-  <div style="background:#fcf8f3;border-left:3px solid #f0c080;padding:12px 16px;border-radius:0 10px 10px 0;font-size:.85rem"><strong>🏭 工厂外卖专项：</strong>工农村周边工厂密集，外卖是核心增量！印制"团餐名片"投放到各工厂传达室，写清微信/电话，满3份起送享9折，满5份送酸梅汤。午间定时配送，错峰出餐。</div>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
-</div>
-<div class="info-card">
-  <div class="card-title"><span class="num">6</span> <span class="em">📢</span> 抖音 & 小红书（简要）</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px;font-size:.82rem"><strong style="color:#5a2d0c">🎬 抖音同城</strong><ul style="padding-left:14px;margin-top:6px"><li>自行联系塘沽本地达人探店</li><li>置换套餐+少量佣金</li><li>话题：#塘沽美食 #砂锅土豆粉</li></ul></div>
-    <div style="background:rgba(250,245,240,0.6);padding:12px;border-radius:10px;font-size:.82rem"><strong style="color:#5a2d0c">📕 小红书种草</strong><ul style="padding-left:14px;margin-top:6px"><li>邀素人免费体验产出笔记</li><li>门店设"打卡立减¥2"</li><li>主推土豆泥拌粉神仙吃法</li></ul></div>
-  </div>
-  <p style="font-size:.78rem;color:#a08060;margin-top:8px;text-align:center">💡 老板自己找达人更划算，以上为参考方向</p>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
-</div>
-<div class="info-card">
-  <div class="card-title"><span class="num">7</span> <span class="em">🎉</span> 开业引活动</div>
-  <div class="table-wrap"><table><tr><th>时段</th><th>活动</th><th>规则</th></tr>
-    <tr><td><strong>D1-D3</strong></td><td>🔥 ¥9.9嗦粉日</td><td>经典砂锅土豆粉全场¥9.9（限堂食）</td></tr>
-    <tr><td><strong>D4-D5</strong></td><td>🥔 土豆泥免费加</td><td>点砂锅粉免费加一份土豆泥</td></tr>
-    <tr><td><strong>D6-D7</strong></td><td>🍚 买粉送饭</td><td>点砂锅粉+¥5换购盖浇饭</td></tr>
-    <tr><td><strong>持续</strong></td><td>📸 收藏打卡有礼</td><td>美团/抖音收藏→送卤蛋/豆干/酸梅汤任选</td></tr>
+
+<div class="card"><div class="card-title"><span class="n">4</span> <span style="color:#ffd700">⭐</span> 美团大众点评运营</div>
+  <div class="tw"><table><tr><th>阶段</th><th>具体动作</th><th>收银配合</th><th>目标</th></tr>
+    <tr><td><strong>D1-D7</strong></td><td>完善门店信息·上线¥9.9团购·引导好评·开通商户通</td><td><span class="tg tgg">团购上线同步收银</span></td><td>10-20条评价</td></tr>
+    <tr><td><strong>D8-D30</strong></td><td>新店特惠流量扶持·扫码点餐引导收藏打卡·优化团购标题</td><td><span class="tg tgg">扫码点餐即核销</span></td><td>工农村小吃TOP10</td></tr>
+    <tr><td><strong>D31+</strong></td><td>商户通投放·每周5-8条评价·上线口碑套餐</td><td><span class="tg tgg">经营报表分析</span></td><td>评分4.5+·月销300+</td></tr>
   </table></div>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
+  <div class="hl"><strong>💡 运营要点：</strong>① 头图为砂锅冒热气实拍视频 ② 每单引导好评（收藏打卡送饮品）③ ¥9.9引流后通过土豆泥砂锅粉升单</div>
+  <div class="dv">🥔 🥔 🥔</div>
 </div>
-<div class="info-card">
-  <div class="card-title"><span class="num">8</span> <span class="em">💬</span> 私域运营与复购</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
-    <div style="background:linear-gradient(135deg,#fcf8f3,#faf3ea);padding:12px;border-radius:10px;text-align:center"><div style="font-size:1.2rem">👥</div><div style="font-weight:700;font-size:.82rem;color:#5a2d0c">社群</div><div style="font-size:.75rem;color:#6a5a4a">入群领¥3券<br>每日推午/晚餐</div></div>
-    <div style="background:linear-gradient(135deg,#fcf8f3,#faf3ea);padding:12px;border-radius:10px;text-align:center"><div style="font-size:1.2rem">🏆</div><div style="font-weight:700;font-size:.82rem;color:#5a2d0c">储值</div><div style="font-size:.75rem;color:#6a5a4a">充50送8·充100送20<br>充200送50</div></div>
-    <div style="background:linear-gradient(135deg,#fdf6ec,#fce8d0);padding:12px;border-radius:10px;text-align:center"><div style="font-size:1.2rem">🎟</div><div style="font-weight:700;font-size:.82rem;color:#5a2d0c">¥49次卡</div><div style="font-size:.75rem;color:#6a5a4a">任选5份砂锅粉<br>3个月有效锁客</div></div>
-    <div style="background:linear-gradient(135deg,#fdf6ec,#fce8d0);padding:12px;border-radius:10px;text-align:center"><div style="font-size:1.2rem">🔄</div><div style="font-weight:700;font-size:.82rem;color:#5a2d0c">复购钩子</div><div style="font-size:.75rem;color:#6a5a4a">集章卡·生日福利<br>外卖感谢卡领¥2</div></div>
+
+<div class="card"><div class="card-title"><span class="n">5</span> 🛵 美团外卖运营</div>
+  <div class="tw"><table><tr><th>维度</th><th>策略</th><th>收银配合</th></tr>
+    <tr><td><strong>门店装修</strong></td><td>头图"砂锅冒热气"实拍·满减"满25减4、满40减7"</td><td><span class="tg tgg">满减同步收银</span></td></tr>
+    <tr><td><strong>新店活动</strong></td><td>新店7天满减膨胀（满20减8）·下午茶7折·团餐满3份9折</td><td><span class="tg tgg">活动一键配置</span></td></tr>
+    <tr><td><strong>工厂团餐</strong></td><td>覆盖周边工厂工业园·推3人团餐¥49·满3份起送+免费小菜</td><td><span class="tg tgg">团餐自动接单</span></td></tr>
+    <tr><td><strong>复购策略</strong></td><td>外卖随单塞感谢卡·扫码领¥2下次可用·收藏店铺送券</td><td><span class="tg tgg">会员券自动发放</span></td></tr>
+  </table></div>
+  <div class="hl"><strong>💡 要点：</strong>① 新店7天黄金期·满20减8冲单 ② 防洒包装+薯与你贴纸 ③ 差评24h内回复送券</div>
+  <div class="dv">🥔 🥔 🥔</div>
+</div>
+
+<div class="card"><div class="card-title"><span class="n">6</span> <span style="color:#ffd700">⚡</span> 美团智能版收银系统</div>
+  <div class="fg">
+    <div class="fi"><div class="ic">🔗</div><div class="t">团购核销</div><div class="d">扫码自动核销→同步后厨打印→无需手输</div></div>
+    <div class="fi"><div class="ic">🛵</div><div class="t">外卖自动接单</div><div class="d">自动接单→后厨自动出票→效率提升30%</div></div>
+    <div class="fi"><div class="ic">📱</div><div class="t">扫码点餐</div><div class="d">入座扫码→手机点餐→省1个服务员</div></div>
+    <div class="fi"><div class="ic">📊</div><div class="t">经营报表</div><div class="d">营收·热销·翻台率·会员分析·菜品优化</div></div>
+    <div class="fi"><div class="ic">🎟️</div><div class="t">电子会员卡</div><div class="d">扫码即开卡·储值优惠·生日福利·等级权益</div></div>
+    <div class="fi"><div class="ic">📢</div><div class="t">优惠券体系</div><div class="d">新客立减券·复购满减券·裂变券·沉睡唤醒</div></div>
+    <div class="fi"><div class="ic">📈</div><div class="t">会员分析</div><div class="d">新老客占比·复购率·客单价·消费时段·精准营销</div></div>
+    <div class="fi"><div class="ic">📱</div><div class="t">美团管家App</div><div class="d">手机远程看营收·发活动·监控外卖·管会员</div></div>
   </div>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
+  <div class="hl"><strong>⚡ 核心价值：</strong>· 省人：省1-2个服务员/月省¥6,000-8,000 · 提效：出餐快30%/多接20%订单 · 增收：复购率提升15-20%/老客贡献30%+</div>
+  <div class="dv">🥔 🥔 🥔</div>
 </div>
-<div class="info-card">
-  <div class="card-title"><span class="num">9</span> <span class="em">🏪</span> 门店体验规范</div>
-  <ul>
-    <li><strong>门头：</strong>暖色灯光+砂锅冒热气实拍，一眼知道卖什么</li>
-    <li><strong>明档：</strong>展示砂锅出餐过程，热气腾腾是天然传播素材</li>
-    <li><strong>砂锅温度：</strong>必须烧到滚烫上桌，「咕嘟咕嘟」冒泡</li>
-    <li><strong>出餐速度：</strong>单份≤5分钟，高峰期备好半成品</li>
-    <li><strong>迎宾语：</strong>"欢迎光临薯与你！新店开业¥9.9嗦粉～"</li>
-    <li><strong>引导好评：</strong>"觉得好吃麻烦写个好评，送您一份饮品～"</li>
-  </ul>
-  <div class="potato-divider">🥔 ✦ 🥔 ✦ 🥔</div>
+
+<div class="card"><div class="card-title"><span class="n">7</span> 🎉 开业引爆方案</div>
+  <div class="tw"><table><tr><th>时段</th><th>活动</th><th>规则</th><th>目的</th><th>收银配合</th></tr>
+    <tr><td><strong>D1-D3</strong></td><td>🔥 ¥9.9嗦粉日</td><td>经典砂锅土豆粉全场¥9.9</td><td>聚人气</td><td><span class="tg tgg">团购定时上架</span></td></tr>
+    <tr><td><strong>D4-D5</strong></td><td>🥔 土豆泥免费加</td><td>点任意砂锅粉免费加土豆泥</td><td>体验招牌</td><td><span class="tg tgg">优惠券批量发</span></td></tr>
+    <tr><td><strong>D6-D7</strong></td><td>🍚 买粉送饭</td><td>点砂锅粉+¥5换购盖浇饭</td><td>展示全品类</td><td><span class="tg tgg">套餐系统配置</span></td></tr>
+    <tr><td><strong>持续</strong></td><td>📸 收藏打卡有礼</td><td>美团收藏打卡→送卤蛋/豆干</td><td>长期拉好评</td><td><span class="tg tgg">核销即赠送</span></td></tr>
+  </table></div>
+  <div class="dv">🥔 🥔 🥔</div>
 </div>
-<div class="info-card">
-  <div class="card-title"><span class="num">10</span> <span class="em">📊</span> KPI目标与执行</div>
-  <div class="kpi-grid">
-    <div class="kpi-item"><div class="num">4.5+</div><div class="label">⭐ 美团评分</div></div>
-    <div class="kpi-item"><div class="num">300+</div><div class="label">📦 团购核销量</div></div>
-    <div class="kpi-item"><div class="num">70%+</div><div class="label">✅ 核销率</div></div>
-    <div class="kpi-item"><div class="num">500+</div><div class="label">👥 社群人数</div></div>
-    <div class="kpi-item"><div class="num">¥3.5-5万</div><div class="label">💰 首月营收</div></div>
-    <div class="kpi-item"><div class="num">6个月</div><div class="label">📈 稳定盈利周期</div></div>
+
+<div class="card"><div class="card-title"><span class="n">8</span> 💬 会员+复购体系</div>
+  <div class="fg">
+    <div class="fi"><div class="ic">🎟️</div><div class="t">¥49次卡</div><div class="d">5份砂锅粉任选·3个月有效·锁客利器</div></div>
+    <div class="fi"><div class="ic">📇</div><div class="t">集章卡</div><div class="d">消费1次1章·集满8章换1份</div></div>
+    <div class="fi"><div class="ic">👥</div><div class="t">微信群</div><div class="d">入群领¥3券·每日推送·群专享加料券</div></div>
+    <div class="fi"><div class="ic">🎂</div><div class="t">生日福利</div><div class="d">收银自动识别·生日月到店免费嗦粉</div></div>
   </div>
-  <div class="phase-grid">
-    <div class="phase-item prep"><div class="phase-label">📋 筹备期</div><div class="phase-desc">D-14 ~ D0 · 美团/抖音入驻+菜单定价+门店形象+物料印刷<small>预算：约¥1,000</small></div></div>
-    <div class="phase-item launch"><div class="phase-label">🔥 引爆期</div><div class="phase-desc">D1-D14 · 开业活动+地推+美团冲量+达人探店<small>预算：约¥3,000-4,000</small></div></div>
-    <div class="phase-item stable"><div class="phase-label">🌟 稳定期</div><div class="phase-desc">D15-D60 · 美团投流+社群运营+外卖优化+私域锁客<small>预算：约¥1,500-2,000/月</small></div></div>
-  </div>
-  <div class="budget-grid">
-    <div class="budget-row"><span class="item">开业物料（海报/传单/立牌）</span><span class="amount">¥500-800</span></div>
-    <div class="budget-row"><span class="item">抖音达人探店（3-5位）</span><span class="amount">¥1,000-2,000</span></div>
-    <div class="budget-row"><span class="item">抖音投流（开业周）</span><span class="amount">¥500-800</span></div>
-    <div class="budget-row"><span class="item">小红书素人（5-8位）</span><span class="amount">¥600-1,000</span></div>
-    <div class="budget-row"><span class="item">美团商户通/团购</span><span class="amount">¥1,500-2,500</span></div>
-    <div class="budget-row"><span class="item">地推物料+人工</span><span class="amount">¥500-800</span></div>
-    <div class="budget-row total"><span class="item">🎯 首月总预算</span><span class="amount">约¥4,600-7,900</span></div>
-  </div>
-  <div class="highlight" style="margin-top:12px"><strong>📈 营收测算：</strong>日均70-110客单 × 人均¥17 = 日均¥1,190-1,870 × 30天 = 首月营收¥35,700-56,100。扣除团购折扣(约8折)→实际到手约¥28,560-44,880。 <strong>首月目标：盈亏平衡，次月起盈利</strong></div>
+  <div class="tw"><table><tr><th>等级</th><th>开卡条件</th><th>权益</th><th>收银实现</th></tr>
+    <tr><td><strong>🥔 薯粉</strong></td><td>扫码即开（免费）</td><td>送¥3券·消费积分·生日福利</td><td><span class="tg tgg">扫码自动开卡</span></td></tr>
+    <tr><td><strong>🥔🥔 金薯</strong></td><td>累计消费¥200或储值¥100</td><td>会员日88折·新品试吃·专属加料券</td><td><span class="tg tgg">系统自动升级</span></td></tr>
+    <tr><td><strong>🥔🥔🥔 黑金薯</strong></td><td>累计消费¥500或储值¥200</td><td>全场85折·生日送套餐·提前预订保留位</td><td><span class="tg tgg">自动识别权益</span></td></tr>
+  </table></div>
+  <div class="hl">🎯 目标：首月会员开卡300+张 · 次月复购率提升15% · 老客贡献营收30%+ · 社群500人</div>
+  <div class="dv">🥔 🥔 🥔</div>
 </div>
-<div class="info-card" style="text-align:center">
-  <div style="font-size:2rem;margin-bottom:6px;animation:bounce 2.5s ease-in-out infinite">🥔</div>
-  <div class="card-title" style="border:none;justify-content:center;font-size:1.1rem"><span class="em">🏁</span> 一句话总结</div>
-  <p style="font-size:1rem;line-height:1.8;color:#3d1c0c;font-weight:600;padding:0 8px">「独立品牌 · 58㎡小店 · 56座布局<br>以砂锅土豆粉立品类，土豆泥拌粉拉复购<br>美团点评+外卖双线冲量<br>做工农村最香最实惠的那碗粉 🥔」</p>
-  <div style="margin-top:12px;font-size:.75rem;color:#a08060">方案生成：2026-05-20 · 薯与你砂锅土豆粉 · 塘沽工农村凯旺广场</div>
+
+<div class="card"><div class="card-title"><span class="n">9</span> 📊 KPI目标与执行节奏</div>
+  <div class="kg">
+    <div class="ki"><div class="n">4.5+</div><div class="l">⭐ 美团评分</div></div>
+    <div class="ki"><div class="n">300+</div><div class="l">📦 团购核销</div></div>
+    <div class="ki"><div class="n">70%+</div><div class="l">✅ 核销率</div></div>
+    <div class="ki"><div class="n">500+单</div><div class="l">🛵 外卖月销</div></div>
+    <div class="ki"><div class="n">300+</div><div class="l">👥 会员开卡</div></div>
+    <div class="ki"><div class="n">¥5-8万</div><div class="l">💰 首月营收</div></div>
+  </div>
+  <div class="pg">
+    <div class="pr2 prp"><div class="tg">📋 筹备期</div><div class="dc">D-14~D0 · 美团入驻+收银安装+菜单+物料+培训<sm>预算：约¥1,500</sm></div></div>
+    <div class="pr2 lch"><div class="tg">🔥 引爆期</div><div class="dc">D1-D14 · 开业活动+地推+团购冲量+外卖冲单+收银全功能上线<sm>预算：约¥3,000-4,000</sm></div></div>
+    <div class="pr2 stb"><div class="tg">🌟 稳定期</div><div class="dc">D15-D60 · 美团投流+会员复购+社群+外卖优化+数据分析<sm>预算：约¥1,500-2,000/月</sm></div></div>
+  </div>
+  <div class="hl"><strong>📈 营收测算（58㎡+外摆56位·¥15-20）：</strong><br>· 堂食：日均80-120客×¥17=¥1,360-2,040/天<br>· 外卖：日均30-50单×¥20=¥600-1,000/天（扣佣后实收¥480-800）<br>· <strong>日均总营收：¥1,840-2,840 · 首月目标：¥55,000-85,000</strong><br>· 首月盈亏平衡 · 次月起盈利</div>
 </div>
+
+<div class="card" style="text-align:center">
+  <div style="font-size:2.2rem;margin-bottom:4px;animation:float 2.5s ease-in-out infinite">🥔</div>
+  <div style="font-size:.95rem;font-weight:700;color:#3d1c0c;line-height:1.8">「美团点评做口碑 · 美团外卖冲销量 · 美团收银管提效<br>三驾马车齐驱 · 把薯与你打造成工农村最火的那碗粉」</div>
+  <div style="margin-top:10px;font-size:.7rem;color:#a08060">方案生成：2026-05-20 · 薯与你砂锅土豆粉 · 塘沽工农村凯旺广场</div>
+</div>
+
 <div class="footer">
-  <div class="tagline">🥔 薯与你 · 属于你的那碗砂锅土豆粉</div>
-  <div class="meta">不做网红的噱头，只做街头的烟火 · 用一碗热腾腾的砂锅，温暖工农村的每一天</div>
+  <div class="mt">🥔 薯与你 · 属于你的那碗砂锅土豆粉</div>
+  <div class="me">用美团智能收银管运营 · 用美团点评做口碑 · 用一碗砂锅温暖工农村</div>
 </div>
 </div>
 </body>
